@@ -1,0 +1,107 @@
+Beta 0.2 (04/10/20)
+Merge all existing code bases and clean up.
+No version control or changelog previous to this version.
+
+Beta 0.4 (04/12/20)
+Implement recovery rom patch, bin compare, and improve progress display.  Repair mapping algorithm.  Lots of other small bug fixes.
+
+Beta 0.4.1 (04/14/20)
+Try a less precise connection routine that might work with B and Y body cars.
+
+Beta 0.4.2 (04/14/20)
+Add some dialogs on success/failure of major operations.  Small ones still rely on the log.
+Move the RESET ECM button to the main page and change its logic so it may work properly.
+
+Beta 0.4.3 (04/17/20)
+Add configuration and some more repairs to the bus master routine.
+
+Beta 0.5.0 (04/18/20)
+Add a raw command tester for the hell of it.
+Move EE to a preload and call model for all write/erase/VPP executable code (thanks kur4o for your help with this!) this means that we only have a 9 byte command to run any routine.
+Reduce ALDL read buffer size during times of extreme bus noise to avoid having too much to clear.
+Handle ALDL usb disconnect better.
+
+Beta 0.5.1 (04/19/20)
+Some prep done for implementation of V6 stuff.
+Externalize loading headers instead of inlining them.
+Revert some changes related to the bus master routine.
+
+Beta 0.5.2
+Improve program storage/retrieval
+Resume bus master traffic after finishing operation and improve some other ALDL logic
+Fix some kernel unloading logic so things reset faster
+Beta P66 V6 flash support
+
+Beta 0.5.3
+Redo bus connection logic again
+
+Beta 0.5.4
+Code cleanup.
+Handle some edge cases and add failsafes in bus connection logic.
+Re-enable confirmation of serial echo integrity.
+
+Beta 0.5.5
+Enable optional fast connnection logic for good serial interfaces (see configuration menu)
+Enable some really basic machine learning for connection predelay
+Add version number to the log
+Add interface specific configuration function to avoid dynamic allocation of port and too many checks.
+Optimize some byte level functions for readability and speed.
+
+Beta 0.5.6
+Improve the advanced section a bit and move some stuff around
+Add a close interface function
+Add warnings for EEB bin where the recovery rom will not work on the ESIDE
+Add ALDL keepalive
+Add a flag to slow down ALDL comms for shitty interfaces
+Fix some more bugs in P66 flash (still not ready)
+Fix bug that stopped serial interface info from populating the log
+
+Beta 0.5.7
+Fix an off-by-one error in the progress visualizer so it will draw all the way to the end
+Simplify the log levels a bit and add a switch to disable auto-scroll
+Improve layout, add dynamic splitter between log and controls etc
+Try a different keepalive as the other one seems to wake a CCM up
+More improvements to P66 support
+Add P66 selective write
+Code cleanup and organization
+
+Beta 0.5.8
+Fix two P66 files that were broken and prevented the kernel from loading
+Restore the function that remembers the last read bin in EE
+
+Beta 0.5.9
+Fix a few c++ casts that prevent it from building with some compilers
+Add a workaround so the EE e-side recovery patch will work if you have an already FF patched bin
+Fix P66 read
+
+Beta 0.6.0
+Remove the warnings from the P66 flash tool so people are less scared of it
+Rearrange the UI a bit so it's more contextual
+Validate calibration ID
+Use existing cal ID or vin from loaded bin if available
+More code cleanup
+
+Beta 0.6.1
+Remember last selected ECM as default
+Provide menu option to select new ECM
+Add a workaround for the E-Side comms patch
+Add unique vehicle identifier to EE
+Use .bin extension properly in save/load dialogs
+
+Beta 0.6.2
+Start integrating OBDX Pro
+Fix bug in vehicle identifier for EE
+
+Beta 0.6.3
+Fix reset timing bug in EE that made it a pain to reset the TSide
+Verify the reset vector in EE doesn't point somewhere shitty
+More work with OBDX Pro
+
+Beta 0.6.4
+Make read/write block size arbitrary
+Move the mode 2 read function into its own module and remove it from the advanced tab
+Add numerical parameters to the flash processors
+Add an option to not resume normal traffic on interface close
+Remove some redundant operations in the flash UI
+Big red error notification bar above the log to get the users attention
+More UI polish

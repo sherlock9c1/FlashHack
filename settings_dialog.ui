@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>settings_dialog</class>
+ <widget class="QDialog" name="settings_dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>597</width>
+    <height>100</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>flashhack config</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout_2">
+   <item row="0" column="0">
+    <widget class="QGroupBox" name="groupBox">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="title">
+      <string>ALDL Connection</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout">
+      <item row="0" column="1">
+       <widget class="QCheckBox" name="aldl_slowcomm">
+        <property name="toolTip">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#000000;&quot;&gt;ALDL_SLOW_MODE&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; color:#000000;&quot;&gt;By default, there's a minimum delay of 10ms between requests as we test the bus to see if we are not the bus master.  If you're having bus or ECM issues, this option will slow down the rate of requests by an additional 50ms.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="text">
+         <string>Slower Communication</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="QCheckBox" name="aldl_idle_traffic">
+        <property name="toolTip">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;ALDL_DISPLAY_IDLE_TRAFFIC&lt;/p&gt;&lt;p&gt;This dumps all of the traffic captured during initial connection to the COMM log. It would be helpful for diagnosing problems with the connection routine but otherwise useless.&lt;/p&gt;&lt;p&gt;Reccommend disabled.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="text">
+         <string>Debug idle traffic</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QCheckBox" name="aldl_disconnect_properly">
+        <property name="toolTip">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#000000;&quot;&gt;ALDL_DISCONNECT_PROPERLY&lt;/span&gt;&lt;/p&gt;&lt;p&gt;This setting will disconnect from the bus properly when disconnecting the serial interface, resuming normal ALDL traffic.  If this setting is disabled, the bus master should wake back up in a few seconds anyway.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="text">
+         <string>Give back bus master</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QCheckBox" name="aldl_fastconnect">
+        <property name="toolTip">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;ALDL_FAST_CONNECTION&lt;/p&gt;&lt;p&gt;This allows people with reasonably good serial interfaces, healthy ALDL busses, and low latency to potentially connect to the ALDL bus a bit more quickly.&lt;/p&gt;&lt;p&gt;Reccommended for low latency FTDI interfaces.&lt;/p&gt;&lt;p&gt;It should be fairly safe, but if you have a slow computer or interface, it's possible that the default would be better. Use at your own risk.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="text">
+         <string>Fast connection timing</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

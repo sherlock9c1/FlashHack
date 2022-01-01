@@ -1,0 +1,14 @@
+#ifndef PACKET_H
+#define PACKET_H
+
+
+class packet {
+public:
+  packet();
+  
+  
+private:
+  
+};
+
+#endif // PACKET_H

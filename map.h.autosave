@@ -1,0 +1,59 @@
+#ifndef MAP_H
+#define MAP_H
+
+#include <QVector>
+#include <QString>
+#include <QBitArray>
+
+class region {
+public:
+  region(unsigned int offset, unsigned int size);
+  region();
+  unsigned int offset;
+  unsigned int size;
+  unsigned int last_byte() const;
+  bool is_valid() const;
+  QString to_string() const;
+  QString region_name;
+};
+
+class map {
+public:
+  map(int bin_size);
+  map();
+
+  void clear();
+  void set_max_block_size(int size);
+  void resize(int bin_size);
+  int size() const;
+  int mapped_bytes() const;
+
+  void append(int offset, int size, QString label = QString());
+  void append(const region &r);
+  void append(const map &m);
+
+  void skip(int offset, int size);
+  void unskip(int offset, int size);
+
+  void map_all();  // this maps everything that has not already been mapped/skipped.
+
+  region take_next();
+  region at(int position) const;
+
+  QString to_string() const;
+  bool is_complete();
+
+  // this function takes everything that isn't the skip byte and overwrites the bin, maps
+  // it to regions, and updates the checksum.
+  void patch_and_map(QByteArray data, unsigned char skip_byte);
+  void skip_byte(unsigned char skip_byte, int min_section_length, const QByteArray &data);
+private:
+
+  QBitArray log;
+  QVector <region>list;
+
+  int bin_size = 0;
+  int max_block_size = 0;
+};
+
+#endif // MAP_H

@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1186</width>
+    <height>694</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>flashhack</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normalon>:/icons/app_window_black_icon&amp;16.png</normalon>
+   </iconset>
+  </property>
+  <property name="autoFillBackground">
+   <bool>false</bool>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <item>
+     <widget class="QStackedWidget" name="main_switcher">
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="start_page">
+       <property name="styleSheet">
+        <string notr="true">QWidget#start_page {background-image: url(:/background.png);}</string>
+       </property>
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <item>
+         <spacer name="horizontalSpacer">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>382</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_2">
+          <item>
+           <widget class="QLabel" name="title_text">
+            <property name="font">
+             <font>
+              <family>Arial Black</family>
+              <pointsize>9</pointsize>
+             </font>
+            </property>
+            <property name="autoFillBackground">
+             <bool>false</bool>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: rgba(235, 235, 235, 200);</string>
+            </property>
+            <property name="text">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:18pt; font-weight:600; color:#000000;&quot;&gt;FLASHHACK&lt;/span&gt;&lt;span style=&quot; font-weight:600; color:#000000;&quot;&gt;[VERSION]&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_2">
+            <item>
+             <widget class="QPushButton" name="start_tool_btn">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                <horstretch>2</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>50</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <pointsize>10</pointsize>
+                <weight>75</weight>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="toolTip">
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:400;&quot;&gt;Run the selected processor above.  You could also double click it.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              </property>
+              <property name="text">
+               <string>Run</string>
+              </property>
+              <property name="icon">
+               <iconset>
+                <normalon>:/icons/arrow_right_icon&amp;16.png</normalon>
+               </iconset>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="advanced_btn">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                <horstretch>1</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>50</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <pointsize>10</pointsize>
+               </font>
+              </property>
+              <property name="toolTip">
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Click this to show advanced, expert, experimental, and unstable modules.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              </property>
+              <property name="text">
+               <string>Advanced</string>
+              </property>
+              <property name="icon">
+               <iconset>
+                <normalon>:/icons/attention_icon&amp;16.png</normalon>
+               </iconset>
+              </property>
+              <property name="checkable">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <widget class="QListWidget" name="processor_list">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>3</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>11</pointsize>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: rgba(220, 220, 220, 240);</string>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPlainTextEdit" name="processor_info">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>2</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>9</pointsize>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: rgba(220, 220, 220, 245);</string>
+            </property>
+            <property name="readOnly">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_2">
+            <property name="font">
+             <font>
+              <italic>true</italic>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: rgba(220, 220, 220, 240);</string>
+            </property>
+            <property name="text">
+             <string>This tool could potentially harm your ECM.  Use at your own risk.</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer_2">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>382</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1186</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuHardware">
+    <property name="title">
+     <string>Settings</string>
+    </property>
+    <addaction name="actionSelect_Serial_Port"/>
+    <addaction name="separator"/>
+    <addaction name="actionConfiguration"/>
+   </widget>
+   <widget class="QMenu" name="menuBin_Tools">
+    <property name="title">
+     <string>Tools</string>
+    </property>
+    <addaction name="actionChange_ECM_Type"/>
+    <addaction name="separator"/>
+    <addaction name="actionEE_Bin_Converter"/>
+   </widget>
+   <widget class="QMenu" name="menuAbout_Help">
+    <property name="title">
+     <string>About</string>
+    </property>
+    <widget class="QMenu" name="menuSpecial_thanks_to_kur4o">
+     <property name="title">
+      <string>Special thanks to:</string>
+     </property>
+     <addaction name="separator"/>
+     <addaction name="actionkur4o"/>
+     <addaction name="actionspfautsch"/>
+    </widget>
+    <addaction name="actionWritten_by_Steve_Haslin_resfilter_resfilter_net"/>
+    <addaction name="actionDonate_Beer_Money"/>
+    <addaction name="menuSpecial_thanks_to_kur4o"/>
+    <addaction name="separator"/>
+    <addaction name="actionfbodytech_com"/>
+    <addaction name="actiongearhead_efi_org"/>
+    <addaction name="separator"/>
+   </widget>
+   <addaction name="menuBin_Tools"/>
+   <addaction name="menuHardware"/>
+   <addaction name="menuAbout_Help"/>
+  </widget>
+  <action name="actionSelect_Serial_Port">
+   <property name="icon">
+    <iconset>
+     <normalon>:/icons/network_icon&amp;16.png</normalon>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>Select ALDL Interface...</string>
+   </property>
+  </action>
+  <action name="actionEE_Bin_Converter">
+   <property name="icon">
+    <iconset>
+     <normalon>:/icons/wrench_icon&amp;16.png</normalon>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>EE Bin Converter</string>
+   </property>
+  </action>
+  <action name="actionWritten_by_Steve_Haslin_resfilter_resfilter_net">
+   <property name="icon">
+    <iconset>
+     <normalon>:/icons/pencil_icon&amp;16.png</normalon>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>Written by Steve Haslin resfilter@resfilter.net</string>
+   </property>
+  </action>
+  <action name="actionfbodytech_com">
+   <property name="icon">
+    <iconset>
+     <normalon>:/icons/link_icon&amp;16.png</normalon>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>fbodytech.com</string>
+   </property>
+  </action>
+  <action name="actiongearhead_efi_org">
+   <property name="icon">
+    <iconset>
+     <normalon>:/icons/link_icon&amp;16.png</normalon>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>gearhead-efi.org</string>
+   </property>
+  </action>
+  <action name="actionDonate_Beer_Money">
+   <property name="icon">
+    <iconset>
+     <normalon>:/icons/cur_dollar_icon&amp;16.png</normalon>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>Donate Beer Money (Paypal)</string>
+   </property>
+  </action>
+  <action name="actionNo_warranty_or_garuntees_are_made_about_this_crazy_homemade_software">
+   <property name="text">
+    <string>No warranty or garuntees are made about this crazy homemade software.</string>
+   </property>
+  </action>
+  <action name="actionConfiguration">
+   <property name="icon">
+    <iconset>
+     <normalon>:/icons/cog_icon&amp;16.png</normalon>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>Configuration...</string>
+   </property>
+  </action>
+  <action name="actionChange_ECM_Type">
+   <property name="icon">
+    <iconset>
+     <normalon>:/icons/arrow_two_head_icon&amp;16.png</normalon>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>Select Tool (Main Menu)</string>
+   </property>
+  </action>
+  <action name="actionTest_Interface">
+   <property name="icon">
+    <iconset>
+     <normalon>:/icons/bug_icon&amp;16.png</normalon>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>Test ALDL Interface...</string>
+   </property>
+  </action>
+  <action name="actionkur4o">
+   <property name="text">
+    <string>kur4o</string>
+   </property>
+  </action>
+  <action name="actionspfautsch">
+   <property name="text">
+    <string>spfautsch</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

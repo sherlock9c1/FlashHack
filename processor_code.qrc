@@ -1,0 +1,16 @@
+<RCC>
+    <qresource prefix="/">
+        <file>68000/EE/ERASE_A.BIN</file>
+        <file>68000/EE/ERASE_B.BIN</file>
+        <file>68000/EE/ERASE_C.BIN</file>
+        <file>68000/EE/ESIDE_KERNEL.BIN</file>
+        <file>68000/EE/ESIDE_READ.BIN</file>
+        <file>68000/EE/REBOOT.BIN</file>
+        <file>68000/EE/TSIDE_KERNEL.BIN</file>
+        <file>68000/EE/TSIDE_READ.BIN</file>
+        <file>68000/EE/VPP_APPLY.BIN</file>
+        <file>68000/EE/VPP_REMOVE.BIN</file>
+        <file>68000/EE/WRITE.BIN</file>
+        <file>68000/EE/VPP_APPLY_LONG.BIN</file>
+    </qresource>
+</RCC>
